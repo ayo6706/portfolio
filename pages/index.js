@@ -19,11 +19,6 @@ export default function Home() {
       <div className="container">
         <Profile />
         <div className="featured">
-          {/* <iframe 
-          // style="border-radius: 5px;" width="560" height="315" 
-          src="https://www.youtube.com/embed/TVOozawQsj4"
-              frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe> */}
         </div>
         <Stack />
         <div className="container">

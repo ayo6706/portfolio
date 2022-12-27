@@ -16,7 +16,7 @@ function Experience() {
                     <i className="bi bi-stack-overflow" aria-hidden="true"></i>
                     Node.js, TypeScript, MongoDB
                 </span>
-                <p className="description">Implementing backend features which the platform is targeted to millions of Nigeria students by providing exams preparatory resources, using node.js, typescript and mongodb to build the architecture.</p><br />
+                <p className="description">As a backend developer, I implemented features for a platform that serves millions of students by providing exam preparatory resources. I utilized node.js, typescript, and mongodb to design and build the platform&apos;s architecture.</p><br />
             </div>
 
         <div className="exp">

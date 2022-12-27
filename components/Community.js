@@ -21,7 +21,7 @@ function Community() {
                 <div className="socials">
                         <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/repotecc"
                                 target="_blank" rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-linkedin" aria-hidden="true"><a
+                        <i className="bi bi-instagram" aria-hidden="true"><a
                                 href="https://www.instagram.com/repotecc/" target="_blank"
                                 rel="noreferrer">Instagram</a></i>
 
@@ -32,9 +32,9 @@ function Community() {
                     <span className="role">Co-Lead/ Team Coordinator & Hult Prize - Oduduwa University Ipetumodu</span>
                     <p className="description">The Hult Prize is an annual, year-long competition that crowd-sources ideas from university level students after challenging them to solve a pressing social issue around topics such as food security, water access, energy, and education.</p>
                     <div className="socials">
-                        <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/AnitaB_org" target="_blank"
+                        <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/HultPrizeOui" target="_blank"
                                 rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-linkedin" aria-hidden="true"><a href="https://www.linkedin.com/company/anitab-org/"
+                        <i className="bi bi-instagram" aria-hidden="true"><a href="https://www.instagram.com/hultprizeoui"
                                 target="_blank" rel="noreferrer">Instagram</a></i>
                     </div>
 
@@ -49,7 +49,7 @@ function Community() {
                     <div className="socials">
                         <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/gdscoui"
                                 target="_blank" rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-linkedin" aria-hidden="true"><a href="https://www.instagram.com/gdscoui/"
+                        <i className="bi bi-instagram" aria-hidden="true"><a href="https://www.instagram.com/gdscoui/"
                                 target="_blank" rel="noreferrer">Instagram</a></i>
                     </div>
 

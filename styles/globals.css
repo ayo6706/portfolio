@@ -132,8 +132,8 @@ nav ul li a:hover::after {
 }
 
 .profile > img {
-  width: 15%;
-  height: 10%;
+  width: 18%;
+  height: 196px;
   border-radius: 50%;
   border: 4px solid #968e8e;;
 }
