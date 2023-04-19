@@ -9,7 +9,7 @@ function Experience() {
                 <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
                     Backend Developer (Remote)</span>
                 <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                    Eduballo </span>
+                    Edubaloo </span>
                 <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
                     May 2022 - Present</span>
                 <span className="date">
