@@ -25,6 +25,8 @@ function Profile() {
                         rel="noreferrer">Twitter</a></i>
                 <i className="bi bi-github" aria-hidden="true"><a href="https://github.com/ayo6706" target="_blank"
                         rel="noreferrer">GitHub</a></i>
+                <i className="bi bi-medium" aria-hidden="true"><a href="https://medium.com/@ayomideonibokun" target="_blank"
+                        rel="noreferrer">Medium</a></i>
                 <i className="bi bi-download" aria-hidden="true"><a
                         href="../assets/resume/Resume+Ayomide+Onibokun.pdf" target="_blank"
                         rel="noreferrer">Résumé</a></i>
