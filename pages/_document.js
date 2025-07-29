@@ -25,6 +25,7 @@ class MyDocument extends Document {
                   agentName: 'ayomide'
               });
             `}
+          </Script> 
         </Head>
         <body>
           <Main />
