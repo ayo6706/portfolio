@@ -8,7 +8,9 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,800;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
           <meta name="robots" content="index, follow" />
           <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
           <link rel="canonical" href="https://repotecc.com/" />
@@ -22,10 +24,11 @@ class MyDocument extends Document {
               }(window,document,'script','custraxx','https://www.custraxx.com/custraxx-chat-widget.js'));
               
               custraxx('init', {
-                  agentName: 'ayomide'
+                  agentName: 'ayomide',
+                  publicKey: ${process.env.NEXT_PUBLIC_CUSTRAXX_PUBLIC_KEY},
               });
             `}
-          </Script> 
+          </Script>
         </Head>
         <body>
           <Main />
