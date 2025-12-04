@@ -25,7 +25,7 @@ class MyDocument extends Document {
               
               custraxx('init', {
                   agentName: 'ayomide',
-                  publicKey: ${process.env.NEXT_PUBLIC_CUSTRAXX_PUBLIC_KEY},
+                  publicKey: '${process.env.NEXT_PUBLIC_CUSTRAXX_PUBLIC_KEY}',
               });
             `}
           </Script>
