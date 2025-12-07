@@ -1,66 +1,78 @@
 import Image from "next/image";
+import styles from '../styles/Stack.module.css';
+
 import Repotecc from "../public/assets/img/repotecc.png"
 import HultPrize from "../public/assets/img/hult-prize.png"
 import GDSCOUI from "../public/assets/img/gdscoui.png"
 
+const communities = [
+    {
+        name: "Repotecc",
+        role: "Lead, Repotecc",
+        description: "Repotecc is a tech community that provides a platform for enthusiasts and entry developers to learn technology, with guided mentorship.",
+        image: Repotecc,
+        socials: [
+            { name: "Twitter", url: "https://twitter.com/repotecc", icon: "bi-twitter" },
+            { name: "Instagram", url: "https://www.instagram.com/repotecc/", icon: "bi-instagram" }
+        ]
+    },
+    {
+        name: "Hult Prize",
+        role: "Co-Lead/ Team Coordinator (2020-2021)",
+        description: "The Hult Prize is an annual, year-long competition that crowd-sources ideas from university level students after challenging them to solve a pressing social issue.",
+        image: HultPrize,
+        socials: [
+            { name: "Twitter", url: "https://twitter.com/HultPrizeOui", icon: "bi-twitter" },
+            { name: "Instagram", url: "https://www.instagram.com/hultprizeoui", icon: "bi-instagram" }
+        ]
+    },
+    {
+        name: "GDSC OUI",
+        role: "Chapter Lead (2021-2022)",
+        description: "Led Google Developer Student Clubs at Oduduwa University, organizing events to spread knowledge about technology and share experiences in building user-centered solutions.",
+        image: GDSCOUI,
+        socials: [
+            { name: "Twitter", url: "https://twitter.com/gdscoui", icon: "bi-twitter" },
+            { name: "Instagram", url: "https://www.instagram.com/gdscoui/", icon: "bi-instagram" }
+        ]
+    }
+];
 
 function Community() {
     return (
-  
-      
-        <div className="communities" id="communities">
-        <h2>Communities</h2><span></span>
-
-        <div className="communities-details">
-            <div  className="row">
-                <div className="details repotecc-logo col-md-4">
-                    <Image src={Repotecc} alt="Repotecc" className="logos" width="auto" height="auto" />
-                    <span className="role">Lead, Repotecc</span>
-                    <p className="description">
-                        Repotecc is a tech community that provides a platform for enthusiasts and entry developers to learn technology , with guided mentorship. </p> 
-                <div className="socials">
-                        <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/repotecc"
-                                target="_blank" rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-instagram" aria-hidden="true"><a
-                                href="https://www.instagram.com/repotecc/" target="_blank"
-                                rel="noreferrer">Instagram</a></i>
-
-                    </div>
-                </div>
-                <div className="details abnrbi col-md-4">
-                    <Image src={HultPrize} alt="" className="logos" width="160" height="160" />
-                    <span className="role">Co-Lead/ Team Coordinator & Hult Prize - Oduduwa University Ipetumodu</span>
-                    <p className="description">The Hult Prize is an annual, year-long competition that crowd-sources ideas from university level students after challenging them to solve a pressing social issue around topics such as food security, water access, energy, and education.</p>
-                    <div className="socials">
-                        <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/HultPrizeOui" target="_blank"
-                                rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-instagram" aria-hidden="true"><a href="https://www.instagram.com/hultprizeoui"
-                                target="_blank" rel="noreferrer">Instagram</a></i>
-                    </div>
-
+        <section className={styles.communitySection} id="communities">
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <h2 className={styles.title}>Communities</h2>
                 </div>
 
-                <div className="details gdgnrbi col-md-4">
-                    <Image src={GDSCOUI} alt="" className="logos" width="auto" height="auto" />
-                    <span className="role">Ex Lead, Google Developer Student Clubs</span>
-                    <p className="description">Organize and create events in Oduduwa University Ipetumodu, with the aim of spreading knowledge
-                        about technology and
-                        sharing experiences in building user-centered solutions using Google technologies.</p>
-                    <div className="socials">
-                        <i className="bi bi-twitter" aria-hidden="true"><a href="https://twitter.com/gdscoui"
-                                target="_blank" rel="noreferrer">Twitter</a></i>
-                        <i className="bi bi-instagram" aria-hidden="true"><a href="https://www.instagram.com/gdscoui/"
-                                target="_blank" rel="noreferrer">Instagram</a></i>
-                    </div>
-
+                <div className={styles.communityGrid}>
+                    {communities.map((comm, index) => (
+                        <div key={index} className={styles.communityCard}>
+                            <div style={{ width: '100%', height: '150px', position: 'relative', marginBottom: '1rem' }}>
+                                <Image
+                                    src={comm.image}
+                                    alt={comm.name}
+                                    fill
+                                    style={{ objectFit: 'contain' }}
+                                    className={styles.communityLogo}
+                                />
+                            </div>
+                            <span className={styles.communityRole}>{comm.role}</span>
+                            <p className={styles.communityDesc}>{comm.description}</p>
+                            <div className={styles.socials}>
+                                {comm.socials.map((social, i) => (
+                                    <a key={i} href={social.url} target="_blank" rel="noreferrer" className={styles.socialLink} title={social.name}>
+                                        <i className={`bi ${social.icon}`}></i>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
-          
-        </div>
-    </div>
-  
-      
+        </section>
     );
-  }
-  
-  export default Community;
+}
+
+export default Community;

@@ -1,118 +1,79 @@
+import styles from '../styles/Experience.module.css';
+
+const experiences = [
+    {
+        role: "Backend Developer",
+        company: "Edubaloo",
+        date: "May 2022 - Present",
+        tech: "TypeScript, Node.js, Python, MongoDB, Redis, AWS",
+        description: "Leading backend architecture and AI implementations. Designed an LLM-powered review tool reducing manual effort by 60% and engineered real-time features optimized for high availability and massive scale."
+    },
+    {
+        role: "Full Stack Developer (Contract)",
+        company: "Zercom",
+        date: "Aug 2020 - Jan 2021",
+        tech: "PHP, WordPress, Python",
+        description: "Developed internal tools for employee management, streamlining administrative tasks by 45%. Optimized WordPress sites to improve load times by over 50%."
+    },
+    {
+        role: "Full Stack Developer",
+        company: "Flux Africa",
+        date: "June 2020 - Aug 2020",
+        tech: "PHP, MySQL, Twilio",
+        description: "Revamped a legacy CRM, integrating SMS automation which reduced customer churn by 20% and slashed order resolution times."
+    },
+    {
+        role: "Backend Intern",
+        company: "HNG INTERNSHIP",
+        date: "April 2020 - May 2020",
+        tech: "PHP, Laravel, Python, Django",
+        description: "Collaborated in a remote, fast-paced environment to build APIs for financial tools and coordinated a cross-functional team."
+    },
+    {
+        role: "Full Stack Developer",
+        company: "Glimpsegist",
+        date: "Feb 2017 - July 2020",
+        tech: "PHP, HTML, CSS, JavaScript, WordPress",
+        description: "Independently built and maintained a high-traffic entertainment blog and voting platform handling millions of users."
+    }
+];
 
 function Experience() {
     return (
-  
-        <div className="experience" id="experience">
-            <h2>Experience</h2><span></span>
+        <section className={styles.section} id="experience">
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <h2 className={styles.title}>Experience</h2>
+                </div>
 
-            <div className="exp">
-                <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
-                    Backend Developer (Remote)</span>
-                <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                    Edubaloo </span>
-                <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
-                    May 2022 - Present</span>
-                <span className="date">
-                    <i className="bi bi-stack-overflow" aria-hidden="true"></i>
-                    Node.js, TypeScript, MongoDB
-                </span>
-                <p className="description">As a backend developer, I implemented features for a platform that serves millions of students by providing exam preparatory resources. I utilized node.js, typescript, and mongodb to design and build the platform&apos;s architecture.</p><br />
-            </div>
+                <div className={styles.list}>
+                    {experiences.map((exp, index) => (
+                        <div key={index} className={styles.item}>
+                            <div className={styles.itemHeader}>
+                                <span className={styles.role}>{exp.role}</span>
+                                <span className={styles.company}>@ {exp.company}</span>
+                                <span className={styles.date}>{exp.date}</span>
+                            </div>
 
-        <div className="exp">
-            <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
-                Full Stack Developer –  (Contract)</span>
-            <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                Zercom </span>
-            <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
-                AUG 2020 - JAN 2021</span>
-            <span className="date">
-                <i className="bi bi-stack-overflow" aria-hidden="true"></i>
-                PHP, WordPress, Python, PYQT
-            </span>
-            <div className="description">
-                    <ul>
-                        <li>Managed and worked on building an intranet software 
-                            used to track employees using python pyqt to build the 
-                            desktop app while synchronizing data to a WordPress architecture 
-                            through its rest api.
-                        </li>
-                        <li>Worked on some WordPress websites during my stay re-engineering themes, 
-                            plugins, and also debugging errors using my knowledge in PHP and working with 
-                            WordPress codex.
-                        </li>
-                    </ul>
+                            <div className={styles.description}>
+                                <p>{exp.description}</p>
+                                {exp.points && (
+                                    <ul>
+                                        {exp.points.map((point, i) => (
+                                            <li key={i}>{point}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: 'var(--accent-primary)' }}>
+                                    <strong>Tech:</strong> {exp.tech}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-        <div className="exp">
-            <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
-            Full Stack Developer </span>
-            <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                Flux Africa</span>
-            <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
-                June 2020 - Aug 2020</span>
-            <span className="date">
-                <i className="bi bi-stack-overflow" aria-hidden="true"></i>
-                PHP, Vue, Laravel 
-            </span>
-            <div className="description">
-                <ul>
-                    <li>
-                    Worked on a Tech radio broadcast site using WordPress, and managed a process reengineering project to improve and consolidate end-to-end service processes.
-                    </li>
-                    <li>
-                        worked on customer relations management system for a food delivery company, acted alone with no team supervision developed the project with vanilla php, Html, css, js, bootstrap, etc.
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div className="exp">
-            <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
-                Backend Intern</span>
-            <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                HNG INTERNSHIP</span>
-            <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
-                April 2020 - May 2020</span>
-            <span className="date">
-                <i className="bi bi-stack-overflow" aria-hidden="true"></i>
-                PHP, Laravel, Python, Django
-            </span>
-            <div className="description">
-                <ul>
-                    <li> Worked with backend developers with different skill set virtually using tools like git, github, and php as the preferred language.</li>
-                    <li> Worked on building api with Djangorestframework. </li>
-                    <li>Coordinated a team of product designers and frontend developers Implementing an income calculator for piggyvest.</li>
-                    <li> Worked on using walletafrica apis to build the solution for bvn verification and airtime payment.</li>
-            
-                </ul>
-            </div>
-        </div>
-
-        <div className="exp">
-            <span className="role"><i className="bi bi-laptop" aria-hidden="true"></i>
-                Full Stack Developer</span>
-            <span className="company"><i className="bi bi-building-o" aria-hidden="true"></i>
-                Glimpsegist</span>
-            <span className="date"><i className="bi bi-clock-o" aria-hidden="true"></i>
-                Feb 2017 - July 2020</span>
-            <span className="date">
-                <i className="bi bi-stack-overflow" aria-hidden="true"></i>
-                PHP, Html, Css, Javascript, Bootstrap, WordPress
-            </span>
-            <div className="description">
-                <ul>
-                     <li> Developed and hosted a blog for handling music, and videos.</li>
-                    <li>In charge of managing and maintaining the blog which includes, security vulnerabilities, site optimization, and SEO.</li>
-                    <li>Worked independently to build a voting platform that attracted millions of users.</li>
-                </ul>
-                
-            </div>  
-        </div>
-    </div>
-  
-      
+        </section>
     );
-  }
-  
-  export default Experience;
+}
+
+export default Experience;
