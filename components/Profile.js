@@ -19,14 +19,23 @@ function Profile() {
                                         </div>
 
                                         <div className={styles.socials}>
-                                                <a href="https://github.com/ayo6706" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="bi bi-github"></i>
-                                                </a>
-                                                <a href="https://twitter.com/ayo_onibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="bi bi-twitter"></i>
-                                                </a>
                                                 <a href="https://linkedin.com/in/ayomide-onibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="bi bi-linkedin"></i>
+                                                        <i className="fa fa-linkedin" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://x.com/ayomideonibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
+                                                        <i className="fa fa-twitter" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://github.com/ayo6706" target="_blank" rel="noreferrer" className={styles.socialLink}>
+                                                        <i className="fa fa-github" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="https://medium.com/@ayomideonibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
+                                                        <i className="fa fa-medium" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="/assets/resume/Resume+Ayomide+Onibokun.pdf" target="_blank" rel="noreferrer" className={styles.socialLink}>
+                                                        <i className="fa fa-file-text" aria-hidden="true"></i>
+                                                </a>
+                                                <a href="mailto:ayo6706@gmail.com" className={styles.socialLink}>
+                                                        <i className="fa fa-envelope" aria-hidden="true"></i>
                                                 </a>
                                         </div>
                                 </div>
