@@ -7,7 +7,7 @@ function Profile() {
                                 <div className={styles.content}>
                                         <span className={styles.greeting}>Hello, I'm</span>
                                         <h1 className={styles.name}>Ayomide Onibokun</h1>
-                                        <h2 className={styles.role}>Senior Software Engineer</h2>
+                                        <h2 className={styles.role}>Software Engineer</h2>
                                         <p className={styles.bio}>
                                                 I architect scalable backend systems and AI-powered solutions.
                                                 Passionate about LLMs, real-time systems, and community building.

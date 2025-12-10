@@ -4,7 +4,7 @@ const education = [
     {
         course: "BEng. Computer Engineering",
         school: "Oduduwa University Ipetumodu, Nigeria",
-        date: "Nov 2016 - June 2021",
+        date: "Nov 2016 - June 2022",
         description: ""
     }
 ];
