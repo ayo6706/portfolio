@@ -1,10 +1,19 @@
-import { useEffect } from "react";
-import Script from 'next/script'
-import '../styles/globals.css'
+import Script from 'next/script';
+import { IBM_Plex_Mono, Public_Sans } from 'next/font/google';
+import '../styles/globals.css';
+
+const publicSans = Public_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800'] });
+const plexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'] });
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <style jsx global>{`
+        :root {
+          --font-sans: ${publicSans.style.fontFamily};
+          --font-mono: ${plexMono.style.fontFamily};
+        }
+      `}</style>
       <Script id="custraxx-loader" strategy="afterInteractive">
         {`
           (function(w,d,s,o,f,js,fjs) {
@@ -21,7 +30,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
       <Component {...pageProps} />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

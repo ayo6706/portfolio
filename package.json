@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "next": "^16.0.7",
@@ -21,6 +19,7 @@
     "@eslint/eslintrc": "^3.3.3",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "prettier": "^3.9.9",
     "typescript": "^5.9.3"
   }
 }

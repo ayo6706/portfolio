@@ -1,48 +1,44 @@
-import { useState, useEffect } from 'react';
-import styles from '../styles/Navbar.module.css';
+import { useEffect, useState } from 'react';
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const links = [
+  { id: 'projects', label: 'Work' },
+  { id: 'story', label: 'Story' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'writing', label: 'Writing' },
+  { id: 'contact', label: 'Contact' },
+];
+
+export default function Navbar() {
+  const [active, setActive] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const sections = links.map(({ id }) => document.getElementById(id)).filter(Boolean);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-40% 0px -55% 0px' }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
-      <div className={styles.container}>
-        <a href="#" className={styles.logo}>
-          Ayomide <span>Onibokun</span>
+    <header className="site-header">
+      <nav className="container navigation" aria-label="Main navigation">
+        <a className="wordmark" href="#profile">
+          Ayomide Onibokun
         </a>
-
-        <button className={styles.mobileToggle} onClick={toggleMenu} aria-label="Toggle navigation">
-          {isOpen ? '✕' : '☰'}
-        </button>
-
-        <div className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
-          <a href="#tech-stack" className={styles.link} onClick={() => setIsOpen(false)}>Tech Stack</a>
-          <a href="#communities" className={styles.link} onClick={() => setIsOpen(false)}>Communities</a>
-          <a href="#education" className={styles.link} onClick={() => setIsOpen(false)}>Education</a>
-          <a href="#experience" className={styles.link} onClick={() => setIsOpen(false)}>Experience</a>
-          <a href="#projects" className={styles.link} onClick={() => setIsOpen(false)}>Projects</a>
+        <div className="nav-links">
+          {links.map(({ id, label }) => (
+            <a key={id} href={`#${id}`} aria-current={active === id ? 'true' : undefined}>
+              {label}
+            </a>
+          ))}
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
-
-export default Navbar;

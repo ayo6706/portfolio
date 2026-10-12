@@ -1,55 +1,74 @@
-import styles from '../styles/Profile.module.css';
+import { useEffect, useState } from 'react';
 
-function Profile() {
-        return (
-                <section className={styles.profile} id="profile">
-                        <div className={styles.container}>
-                                <div className={styles.content}>
-                                        <span className={styles.greeting}>Hello, I'm</span>
-                                        <h1 className={styles.name}>Ayomide Onibokun</h1>
-                                        <h2 className={styles.role}>Software Engineer</h2>
-                                        <p className={styles.bio}>
-                                                I architect scalable backend systems and AI-powered solutions.
-                                                Passionate about LLMs, real-time systems, and community building.
-                                        </p>
+function LocalTime() {
+  const [time, setTime] = useState('');
 
-                                        <div className={styles.actions}>
-                                                <a href="#projects" className={styles.btnPrimary}>View Work</a>
-                                                <a href="mailto:ayo6706@gmail.com" className={styles.btnSecondary}>Contact Me</a>
-                                        </div>
+  useEffect(() => {
+    const format = () =>
+      new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Africa/Lagos',
+        hour: '2-digit',
+        minute: '2-digit',
+      }).format(new Date());
+    setTime(format());
+    const timer = setInterval(() => setTime(format()), 30000);
+    return () => clearInterval(timer);
+  }, []);
 
-                                        <div className={styles.socials}>
-                                                <a href="https://linkedin.com/in/ayomide-onibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="fa fa-linkedin" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="https://x.com/ayomideonibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="fa fa-twitter" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="https://github.com/ayo6706" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="fa fa-github" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="https://medium.com/@ayomideonibokun" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="fa fa-medium" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="/assets/resume/Resume+Ayomide+Onibokun.pdf" target="_blank" rel="noreferrer" className={styles.socialLink}>
-                                                        <i className="fa fa-file-text" aria-hidden="true"></i>
-                                                </a>
-                                                <a href="mailto:ayo6706@gmail.com" className={styles.socialLink}>
-                                                        <i className="fa fa-envelope" aria-hidden="true"></i>
-                                                </a>
-                                        </div>
-                                </div>
-
-                                <div className={styles.imageWrapper}>
-                                        <img
-                                                src="/assets/img/me.jpg"
-                                                alt="Ayomide Onibokun"
-                                                className={styles.profileImage}
-                                        />
-                                </div>
-                        </div>
-                </section>
-        );
+  return <span>{time ? `${time} in Nigeria` : 'Nigeria'}</span>;
 }
 
-export default Profile;
+const now = [
+  { org: 'TinyRocket Labs', work: 'VectorLint: docs quality checks in CI' },
+  { org: 'BuySimply', work: 'Financial workflows for government platforms' },
+];
+
+export default function Profile() {
+  return (
+    <section className="container hero" id="profile">
+      <div className="hero-copy">
+        <p className="eyebrow">Ayomide Onibokun · Software engineer</p>
+        <h1>
+          I build the backend parts that have to <em>keep working</em>.
+        </h1>
+        <p className="intro">
+          APIs, real-time services, payments, and AI workflows. Most of my attention goes to the
+          things that break in production: webhooks, timeouts, retries, and edge cases.
+        </p>
+        <div className="actions">
+          <a className="button" href="#projects">
+            See selected work
+          </a>
+          <a className="text-link" href="mailto:ayo6706@gmail.com">
+            ayo6706@gmail.com
+          </a>
+        </div>
+        <dl className="now">
+          <dt className="mono-label">Currently</dt>
+          {now.map(({ org, work }) => (
+            <dd key={org}>
+              <span className="status-dot" aria-hidden="true" />
+              <strong>{org}</strong>
+              <span>{work}</span>
+            </dd>
+          ))}
+        </dl>
+      </div>
+      <figure className="portrait">
+        <img
+          src="/assets/img/me.jpg"
+          alt="Ayomide Onibokun"
+          width="440"
+          height="500"
+          fetchPriority="high"
+        />
+        <figcaption>
+          <span>That's me, Ayomide.</span>
+          <span className="mono-label">
+            <LocalTime /> · WAT
+          </span>
+        </figcaption>
+      </figure>
+    </section>
+  );
+}
